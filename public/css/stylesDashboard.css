@@ -1,0 +1,158 @@
+/* Modale rendez-vous */
+#rdvModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#rdvModalContent {
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+#rdvModalClose {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    text-align: right;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 26px;
+    color: #333;
+    user-select: none;
+}
+
+
+
+#rdvModalContent h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#rdvModalContent p {
+    position: static !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: auto !important;
+    margin: 12px 0 !important;
+    text-align: left !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    word-wrap: break-word !important;
+}
+
+#rdvModalContent span {
+    display: inline-block !important;
+    min-width: 160px !important;
+    font-weight: bold !important;
+}
+
+button.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button.delete-btn:hover {
+    background-color: darkred;
+}
+
+/* 
+CALENDAR 
+*/
+/* Cible les événements dans le calendrier */
+.fc-event {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.fc-event:hover {
+    background-color: var(--bleu-france) !important;
+    /* exemple de couleur au survol */
+    color: white !important;
+}
+
+/* Change la couleur du jour actuel dans FullCalendar */
+.fc-day-today {
+    background-color: var(--vert-emeraude) !important;
+    /* vert vif */
+    color: #000 !important;
+}
+
+/* Pour que le calendrier prenne toute la largeur du bloc principal */
+#calendar {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Adapter la hauteur automatiquement en fonction de l'écran */
+.fc {
+    /* max-height: 80vh; */
+    /* 80% de la hauteur de la fenêtre */
+    overflow: auto;
+    /* scroll interne si nécessaire, mais rarement */
+}
+
+/* Rendre le texte des événements plus gros */
+.fc-event-title {
+    font-size: 0.6rem;
+}
+
+/* Agrandir la taille des cases jours */
+
+.fc .fc-daygrid-day-frame {
+    min-height: 6em;
+}
+
+
+/* Agrandir les titres de colonnes */
+.fc-col-header-cell {
+    font-size: 1rem;
+}
+
+.fc .fc-daygrid-day-number {
+    padding: 4px;
+    position: relative;
+    z-index: 4;
+    color: var(--bleu-france);
+}
+
+.fc-direction-ltr .fc-daygrid-event .fc-event-time {
+    margin-right: 3px;
+    font-size: 0.8em;
+}
+
+.fc-daygrid-event-dot {
+    border: calc(var(--fc-daygrid-event-dot-width) / 2) solid var(--bleu-france-light);
+    border-radius: calc(var(--fc-daygrid-event-dot-width) / 2);
+    box-sizing: content-box;
+    height: 0px;
+    margin: 0px 4px;
+    width: 0px;
+}
+
+.event-passe {
+    text-decoration: line-through !important;
+    opacity: 0.5;
+}

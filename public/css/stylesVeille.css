@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Rubik', sans-serif;
+    background-color: #ececec;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* prendre toute la hauteur de la fenêtre */
+}
+
+.slideshow-container {
+    flex: 1 1 auto;
+    /* prendre toute la hauteur restante */
+    position: relative;
+    overflow: hidden;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-image {
+    position: relative;
+    width : auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: none;
+}
+
+.slide-image.active {
+    opacity: 1;
+    display: block;
+}
+
+.start-banner {
+    height: 270px;
+    background-color: #000091;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 20px;
+    position: relative;
+}
+
+.start-banner:hover {
+    background-color: #02028896;
+}
+
+.hand-icon {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    width: 200px;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Animation de flottement verticale */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
